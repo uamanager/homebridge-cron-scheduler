@@ -1,15 +1,71 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "CronScheduler",
   "pluginType": "platform",
   "singular": true,
+  "headerDisplay": "Cron Scheduler plugin for Homebridge, which allows scheduling of triggers using cron expressions.",
+  "footerDisplay": "Visit the Project [Readme](https://github.com/uamanager/homebridge-cron-scheduler#readme) for more details.",
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
-        "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
+      "debug": {
+        "title": "Debug",
+        "type": "boolean",
+        "description": "Enable for displaying debug messages.",
+        "default": false
+      },
+      "tasks": {
+        "title": "Tasks",
+        "type": "array",
+        "description": "Add one or more tasks below.",
+        "items": {
+          "title": "Tasks",
+          "type": "object",
+          "properties": {
+            "taskActive": {
+              "title": "Active",
+              "type": "boolean",
+              "description": "Defines whether the task is active or not.",
+              "default": true
+            },
+            "taskName": {
+              "title": "Task Name",
+              "description": "A unique name for the task. Will be used as the accessory name.",
+              "placeholder": "task-name1",
+              "default": "task-name1",
+              "type": "string",
+              "required": true
+            },
+            "taskCronExpression": {
+              "title": "Cron Expression",
+              "description": "The cron expression to use for the task. Check [Readme](https://github.com/uamanager/homebridge-cron-scheduler#readme) for more details.",
+              "type": "string",
+              "required": true,
+              "default": "* * * * *"
+            },
+            "taskMaxRuns": {
+              "title": "Task Max Runs",
+              "description": "Maximum number of times the task can run. Leave blank for unlimited.",
+              "type": "integer"
+            },
+            "taskStateResetInterval": {
+              "title": "Task State Reset Interval",
+              "description": "The interval in minutes after which the task state will be reset. Leave '0' for immediate reset, change to '-1' for enabling toggle mode.",
+              "type": "integer",
+              "default": 0
+            },
+            "taskStartAt": {
+              "title": "Task Start At",
+              "description": "Time at which the task should start. Leave blank for immediate start. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.",
+              "type": "string"
+            },
+            "taskStopAt": {
+              "title": "Task Stop At",
+              "description": "Time at which the task should stop. Leave blank for no stop. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.",
+              "type": "string"
+            }
+          }
+        },
+        "default": []
       }
     }
   }

@@ -1,169 +1,145 @@
-
 <p align="center">
 
 <img src="https://github.com/homebridge/branding/raw/master/logos/homebridge-wordmark-logo-vertical.png" width="150">
 
 </p>
 
+# ⏰ Homebridge Cron Scheduler
 
-# Homebridge Platform Plugin Template
+[![Support Ukraine Badge](https://bit.ly/support-ukraine-now)](https://github.com/support-ukraine/support-ukraine)
+[!["Buy Me A Coffee"](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-ffdd00.svg)](https://www.buymeacoffee.com/uamanager)
+[!["Ko-fi"](https://img.shields.io/badge/Ko--fi-donate-ff5f5f.svg)](https://ko-fi.com/uamanager)
 
-This is a template Homebridge platform plugin and can be used as a base to help you get started developing your own plugin.
+[![npm](https://img.shields.io/npm/v/homebridge-cron-scheduler.svg)](https://www.npmjs.com/package/homebridge-cron-scheduler)
+[![npm](https://img.shields.io/npm/dt/homebridge-cron-scheduler.svg)](https://www.npmjs.com/package/homebridge-cron-scheduler)
+[![npm](https://img.shields.io/npm/dm/homebridge-cron-scheduler.svg)](https://www.npmjs.com/package/homebridge-cron-scheduler)
 
-This template should be used in conjunction with the [developer documentation](https://developers.homebridge.io/). A full list of all supported service types, and their characteristics is available on this site.
+**Creating and maintaining Homebridge plugins consume a lot of time and effort, if you
+would like to share your appreciation, feel free to "Star" or donate.**
 
-## Clone As Template
+[Click here](https://github.com/uamanager) to review more of my plugins.
 
-Click the link below to create a new GitHub Repository using this template, or click the *Use This Template* button above.
+## Info
 
-<span align="center">
+Cron Scheduler plugin for Homebridge, which allows scheduling of triggers using cron expressions.
 
-### [Create New Repository From Template](https://github.com/homebridge/homebridge-plugin-template/generate)
+## Installation
 
-</span>
-
-## Setup Development Environment
-
-To develop Homebridge plugins you must have Node.js 12 or later installed, and a modern code editor such as [VS Code](https://code.visualstudio.com/). This plugin template uses [TypeScript](https://www.typescriptlang.org/) to make development easier and comes with pre-configured settings for [VS Code](https://code.visualstudio.com/) and ESLint. If you are using VS Code install these extensions:
-
-* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-## Install Development Dependencies
-
-Using a terminal, navigate to the project folder and run this command to install the development dependencies:
+After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
 
 ```
-npm install
+sudo npm install -g --unsafe-perm homebridge-cron-scheduler@latest
 ```
 
-## Update package.json
+## Example Config
 
-Open the [`package.json`](./package.json) and change the following attributes:
-
-* `name` - this should be prefixed with `homebridge-` or `@username/homebridge-` and contain no spaces or special characters apart from a dashes
-* `displayName` - this is the "nice" name displayed in the Homebridge UI
-* `repository.url` - Link to your GitHub repo
-* `bugs.url` - Link to your GitHub repo issues page
-
-When you are ready to publish the plugin you should set `private` to false, or remove the attribute entirely.
-
-## Update Plugin Defaults
-
-Open the [`src/settings.ts`](./src/settings.ts) file and change the default values:
-
-* `PLATFORM_NAME` - Set this to be the name of your platform. This is the name of the platform that users will use to register the plugin in the Homebridge `config.json`.
-* `PLUGIN_NAME` - Set this to be the same name you set in the [`package.json`](./package.json) file. 
-
-Open the [`config.schema.json`](./config.schema.json) file and change the following attribute:
-
-* `pluginAlias` - set this to match the `PLATFORM_NAME` you defined in the previous step.
-
-## Build Plugin
-
-TypeScript needs to be compiled into JavaScript before it can run. The following command will compile the contents of your [`src`](./src) directory and put the resulting code into the `dist` folder.
-
-```
-npm run build
-```
-
-## Link To Homebridge
-
-Run this command so your global install of Homebridge can discover the plugin in your development environment:
-
-```
-npm link
-```
-
-You can now start Homebridge, use the `-D` flag so you can see debug log messages in your plugin:
-
-```
-homebridge -D
-```
-
-## Watch For Changes and Build Automatically
-
-If you want to have your code compile automatically as you make changes, and restart Homebridge automatically between changes, you first need to add your plugin as a platform in `~/.homebridge/config.json`:
-```
+```json lines
 {
-...
-    "platforms": [
+  //...
+  "platforms": [
+    {
+      "platform": "CronScheduler",
+      "debug": true,
+      "tasks": [
         {
-            "name": "Config",
-            "port": 8581,
-            "platform": "config"
+          "taskName": "min-1-default",
+          // uses default `taskActive` with value `true`
+          // uses default `taskCronExpression` with value `* * * * *`
+          // uses default `taskStateResetInterval` with value `0`
         },
         {
-            "name": "<PLUGIN_NAME>",
-            //... any other options, as listed in config.schema.json ...
-            "platform": "<PLATFORM_NAME>"
+          "taskName": "min-3-inactive",
+          "taskActive": false,
+          // task will be inactive, but can be activated using Home app by switching corresponding switch
+          "taskCronExpression": "*/3 * * * *"
+          // task will be triggered every 3 minutes
+        },
+        {
+          "taskName": "min-3-reset-1",
+          // uses default `taskActive` with value `true`
+          "taskCronExpression": "*/3 * * * *",
+          // task will be triggered every 3 minutes
+          "taskStateResetInterval": 1
+          // task will be reset every 1 minute after it was triggered
+        },
+        {
+          "taskName": "working-day-toggle",
+          // uses default `taskActive` with value `true`
+          "taskCronExpression": "0 9,17 * * *",
+          // task will be triggered at 9:00 and 17:00
+          "taskStateResetInterval": -1
+          // task will toggle sensor state when triggered, so sensor will be active from 9:00 to 17:00 every day
+        },
+        {
+          "taskName": "next-ny-once",
+          // uses default `taskActive` with value `true`
+          "taskCronExpression": "0 0 31 12 *",
+          // 31st of December at 00:00
+          "taskMaxRuns": 1
+          // task will be triggered only once at next 31st of December at 00:00
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 
-and then you can run:
+| Config Field | Description                           | Default           | Required |
+|--------------|---------------------------------------|-------------------|----------|
+| platform     | Must always be `CronScheduler`.       | `"CronScheduler"` | Yes      |
+| debug        | Enable for displaying debug messages. | `false`           | No       |
+| tasks        | Array of cron tasks.                  | `[]`              | No       |
 
-```
-npm run watch
-```
+| Task Config Field      | Description                                                                                                                               | Default        | Required |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|----------------|----------|
+| taskActive             | Defines whether the task is active or not.                                                                                                | `true`         | No       |
+| taskName               | A unique name for the task. Will be used as the accessory name.                                                                           | `"task-name1"` | Yes      |
+| taskCronExpression     | The cron expression to use for the task.                                                                                                  | `* * * * *`    | No       |
+| taskMaxRuns            | Maximum number of times the task can run. Leave blank for unlimited.                                                                      | `Infinite`     | No       |
+| taskStateResetInterval | The interval in minutes after which the task state will be reset. Leave '0' for immediate reset, change to '-1' for enabling toggle mode. | `0`            | No       |
+| taskStartAt            | Time at which the task should start. Leave blank for immediate start. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.    | `undefined`    | No       |
+| taskStopAt             | Time at which the task should stop. Leave blank for no stop. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.             | `undefined`    | No       |
 
-This will launch an instance of Homebridge in debug mode which will restart every time you make a change to the source code. It will load the config stored in the default location under `~/.homebridge`. You may need to stop other running instances of Homebridge while using this command to prevent conflicts. You can adjust the Homebridge startup command in the [`nodemon.json`](./nodemon.json) file.
+## Cron Expression
 
-## Customise Plugin
+*   Cron expressions support the following additional modifiers
+  -   *?* A question mark is substituted with cron initialization time, as an example - `? * * * *` would be substituted with `8 * * * *` if time is `<any hour>:08`. The question mark can be used in any field.
+  -   *L* L can be used in the day of month field, to specify the last day of the month.
 
-You can now start customising the plugin template to suit your requirements.
 
-* [`src/platform.ts`](./src/platform.ts) - this is where your device setup and discovery should go.
-* [`src/platformAccessory.ts`](./src/platformAccessory.ts) - this is where your accessory control logic should go, you can rename or create multiple instances of this file for each accessory type you need to implement as part of your platform plugin. You can refer to the [developer documentation](https://developers.homebridge.io/) to see what characteristics you need to implement for each service type.
-* [`config.schema.json`](./config.schema.json) - update the config schema to match the config you expect from the user. See the [Plugin Config Schema Documentation](https://developers.homebridge.io/#/config-schema).
-
-## Versioning Your Plugin
-
-Given a version number `MAJOR`.`MINOR`.`PATCH`, such as `1.4.3`, increment the:
-
-1. **MAJOR** version when you make breaking changes to your plugin,
-2. **MINOR** version when you add functionality in a backwards compatible manner, and
-3. **PATCH** version when you make backwards compatible bug fixes.
-
-You can use the `npm version` command to help you with this:
-
-```bash
-# major update / breaking changes
-npm version major
-
-# minor update / new features
-npm version update
-
-# patch / bugfixes
-npm version patch
+```javascript
+// ┌────────────── minute (0 - 59)
+// │ ┌──────────── hour (0 - 23)
+// │ │ ┌────────── day of month (1 - 31)
+// │ │ │ ┌──────── month (1 - 12, JAN-DEC)
+// │ │ │ │ ┌────── day of week (0 - 6, SUN-Mon) 
+// │ │ │ │ │       (0 to 6 are Sunday to Saturday; 7 is Sunday, the same as 0)
+// │ │ │ │ │
+// * * * * *
 ```
 
-## Publish Package
+| Field        | Required | Allowed values  | Allowed special characters | Remarks                                                     |
+|--------------|----------|-----------------|----------------------------|-------------------------------------------------------------|
+| Minutes      | Yes      | 0-59            | * , - / ?                  |                                                             |
+| Hours        | Yes      | 0-23            | * , - / ?                  |                                                             |
+| Day of Month | Yes      | 1-31            | * , - / ? L                |                                                             |
+| Month        | Yes      | 1-12 or JAN-DEC | * , - / ?                  |                                                             |
+| Day of Week  | Yes      | 0-7 or SUN-MON  | * , - / ?                  | 0 to 6 are Sunday to Saturday<br>7 is Sunday, the same as 0 |
 
-When you are ready to publish your plugin to [npm](https://www.npmjs.com/), make sure you have removed the `private` attribute from the [`package.json`](./package.json) file then run:
-
-```
-npm publish
-```
-
-If you are publishing a scoped plugin, i.e. `@username/homebridge-xxx` you will need to add `--access=public` to command the first time you publish.
-
-#### Publishing Beta Versions
-
-You can publish *beta* versions of your plugin for other users to test before you release it to everyone.
-
-```bash
-# create a new pre-release version (eg. 2.1.0-beta.1)
-npm version prepatch --preid beta
-
-# publish to @beta
-npm publish --tag=beta
-```
-
-Users can then install the  *beta* version by appending `@beta` to the install command, for example:
-
-```
-sudo npm install -g homebridge-example-plugin@beta
-```
+> **Note**
+> Weekday and month names are case insensitive. Both MON and mon works.
 
 
+> See [Cron Expression](https://github.com/Hexagon/croner/blob/master/README.md) for more details.
+
+# Contributing
+
+You can contribute to this homebridge plugin in following ways:
+
+- Report issues and help verify fixes as they are checked in.
+- Review the source code changes.
+- Contribute bug fixes.
+- Contribute changes to extend the capabilities
+- Pull requests are accepted.
+
+See [CONTRIBUTING](https://github.com/uamanager/homebridge-cron-scheduler/blob/master/CONTRIBUTING.md)
