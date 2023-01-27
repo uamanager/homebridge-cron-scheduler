@@ -84,11 +84,12 @@ sudo npm install -g --unsafe-perm homebridge-cron-scheduler@latest
 }
 ```
 
-| Config Field | Description                           | Default           | Required |
-|--------------|---------------------------------------|-------------------|----------|
-| platform     | Must always be `CronScheduler`.       | `"CronScheduler"` | Yes      |
-| debug        | Enable for displaying debug messages. | `false`           | No       |
-| tasks        | Array of cron tasks.                  | `[]`              | No       |
+| Config Field | Description                                                                                       | Default           | Required |
+|--------------|---------------------------------------------------------------------------------------------------|-------------------|----------|
+| platform     | Must always be `CronScheduler`.                                                                   | `"CronScheduler"` | Yes      |
+| debug        | Enable for displaying debug messages.                                                             | `false`           | No       |
+| timezone     | Timezone in 'Europe/Kyiv' format to use for all tasks. Leave blank for using the system timezone. | `undefined`       | No       |
+| tasks        | Array of cron tasks.                                                                              | `[]`              | No       |
 
 | Task Config Field      | Description                                                                                                                               | Default        | Required |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|----------------|----------|
@@ -99,13 +100,15 @@ sudo npm install -g --unsafe-perm homebridge-cron-scheduler@latest
 | taskStateResetInterval | The interval in minutes after which the task state will be reset. Leave '0' for immediate reset, change to '-1' for enabling toggle mode. | `0`            | No       |
 | taskStartAt            | Time at which the task should start. Leave blank for immediate start. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.    | `undefined`    | No       |
 | taskStopAt             | Time at which the task should stop. Leave blank for no stop. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.             | `undefined`    | No       |
+| timezone               | Timezone override in 'Europe/Kyiv' format to use for this tasks. Leave blank for using the global timezone.                               | `undefined`    | No       |
 
 ## Cron Expression
 
-*   Cron expressions support the following additional modifiers
-  -   *?* A question mark is substituted with cron initialization time, as an example - `? * * * *` would be substituted with `8 * * * *` if time is `<any hour>:08`. The question mark can be used in any field.
-  -   *L* L can be used in the day of month field, to specify the last day of the month.
+* Cron expressions support the following additional modifiers
 
+- *?* A question mark is substituted with cron initialization time, as an example - `? * * * *` would be substituted
+  with `8 * * * *` if time is `<any hour>:08`. The question mark can be used in any field.
+- *L* L can be used in the day of month field, to specify the last day of the month.
 
 ```javascript
 // ┌────────────── minute (0 - 59)

@@ -61,6 +61,7 @@ export class TaskHandler {
         maxRuns: this.taskConfig.taskMaxRuns,
         startAt: this.taskConfig.taskStartAt,
         stopAt: this.taskConfig.taskStopAt,
+        timezone: this.taskConfig.timezone,
       },
       this._handleCronJob.bind(this),
     );
@@ -108,6 +109,7 @@ export class TaskHandler {
           legacyMode: false,
           paused: false,
           maxRuns: 1,
+          timezone: this.taskConfig.timezone,
         },
         () => {
           this.$_logger && this.$_logger.debug(

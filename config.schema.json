@@ -13,6 +13,12 @@
         "description": "Enable for displaying debug messages.",
         "default": false
       },
+      "timezone": {
+        "title": "Global Timezone",
+        "description": "Timezone in 'Europe/Kyiv' format to use for all tasks. Leave blank for using the system timezone.",
+        "placeholder": "Europe/Kyiv",
+        "type": "string"
+      },
       "tasks": {
         "title": "Tasks",
         "type": "array",
@@ -61,6 +67,12 @@
             "taskStopAt": {
               "title": "Task Stop At",
               "description": "Time at which the task should stop. Leave blank for no stop. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.",
+              "type": "string"
+            },
+            "timezone": {
+              "title": "Task Timezone",
+              "description": "Timezone override in 'Europe/Kyiv' format to use for this tasks. Leave blank for using the global timezone.",
+              "placeholder": "Europe/Kyiv",
               "type": "string"
             }
           }

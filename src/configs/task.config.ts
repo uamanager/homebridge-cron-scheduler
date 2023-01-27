@@ -8,6 +8,7 @@ export interface ITaskConfig {
   taskStateResetInterval?: number;
   taskStartAt?: string;
   taskStopAt?: string;
+  timezone?: string;
 }
 
 export class TaskConfig implements ITaskConfig {
@@ -18,6 +19,7 @@ export class TaskConfig implements ITaskConfig {
   readonly taskStateResetInterval: number;
   readonly taskStartAt?: string;
   readonly taskStopAt?: string;
+  readonly timezone?: string;
 
   constructor(_config: Config, task: ITaskConfig) {
     this.taskActive = task.taskActive !== undefined ? task.taskActive : true;
@@ -27,6 +29,7 @@ export class TaskConfig implements ITaskConfig {
     this.taskStateResetInterval = task.taskStateResetInterval || 0;
     this.taskStartAt = task.taskStartAt;
     this.taskStopAt = task.taskStartAt;
+    this.timezone = task.timezone || _config.timezone;
   }
 
   get id(): string {
