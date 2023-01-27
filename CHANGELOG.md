@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/uamanager/homebridge-cron-scheduler/compare/v1.2.0...v1.2.1) (2023-01-27)
+
+
+### Bug Fixes
+
+* timezone name ([3e2563a](https://github.com/uamanager/homebridge-cron-scheduler/commit/3e2563aa294a6242957a7267089feb56273804e1))
+
 ## [1.2.0](https://github.com/uamanager/homebridge-cron-scheduler/compare/v1.1.0...v1.2.0) (2023-01-27)
 
 
