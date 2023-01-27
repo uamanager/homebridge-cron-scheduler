@@ -15,8 +15,8 @@
       },
       "timezone": {
         "title": "Global Timezone",
-        "description": "Timezone in 'Europe/Kyiv' format to use for all tasks. Leave blank for using the system timezone.",
-        "placeholder": "Europe/Kyiv",
+        "description": "Timezone in 'Europe/Kiev' format to use for all tasks. Leave blank for using the system timezone.",
+        "placeholder": "Europe/Kiev",
         "type": "string"
       },
       "tasks": {
@@ -71,8 +71,8 @@
             },
             "timezone": {
               "title": "Task Timezone",
-              "description": "Timezone override in 'Europe/Kyiv' format to use for this tasks. Leave blank for using the global timezone.",
-              "placeholder": "Europe/Kyiv",
+              "description": "Timezone override in 'Europe/Kiev' format to use for this tasks. Leave blank for using the global timezone.",
+              "placeholder": "Europe/Kiev",
               "type": "string"
             }
           }

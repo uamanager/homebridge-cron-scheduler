@@ -88,7 +88,7 @@ sudo npm install -g --unsafe-perm homebridge-cron-scheduler@latest
 |--------------|---------------------------------------------------------------------------------------------------|-------------------|----------|
 | platform     | Must always be `CronScheduler`.                                                                   | `"CronScheduler"` | Yes      |
 | debug        | Enable for displaying debug messages.                                                             | `false`           | No       |
-| timezone     | Timezone in 'Europe/Kyiv' format to use for all tasks. Leave blank for using the system timezone. | `undefined`       | No       |
+| timezone     | Timezone in 'Europe/Kiev' format to use for all tasks. Leave blank for using the system timezone. | `undefined`       | No       |
 | tasks        | Array of cron tasks.                                                                              | `[]`              | No       |
 
 | Task Config Field      | Description                                                                                                                               | Default        | Required |
@@ -100,7 +100,7 @@ sudo npm install -g --unsafe-perm homebridge-cron-scheduler@latest
 | taskStateResetInterval | The interval in minutes after which the task state will be reset. Leave '0' for immediate reset, change to '-1' for enabling toggle mode. | `0`            | No       |
 | taskStartAt            | Time at which the task should start. Leave blank for immediate start. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.    | `undefined`    | No       |
 | taskStopAt             | Time at which the task should stop. Leave blank for no stop. ISO 8601 formatted datetime (2021-10-17T23:43:00) in local time.             | `undefined`    | No       |
-| timezone               | Timezone override in 'Europe/Kyiv' format to use for this tasks. Leave blank for using the global timezone.                               | `undefined`    | No       |
+| timezone               | Timezone override in 'Europe/Kiev' format to use for this tasks. Leave blank for using the global timezone.                               | `undefined`    | No       |
 
 ## Cron Expression
 
