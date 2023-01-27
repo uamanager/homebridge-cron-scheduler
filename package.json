@@ -2,7 +2,7 @@
   "private": false,
   "displayName": "Homebridge Cron Scheduler",
   "name": "homebridge-cron-scheduler",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cron Scheduler plugin for Homebridge, which allows scheduling of triggers using cron expressions.",
   "license": "Apache-2.0",
   "repository": {
