@@ -57,7 +57,7 @@
   ],
   "dependencies": {
     "croner": "5.5.1",
-    "homebridge-util-accessory-manager": "0.0.6"
+    "homebridge-util-accessory-manager": "0.0.7"
   },
   "devDependencies": {
     "@types/node": "18.11.19",
