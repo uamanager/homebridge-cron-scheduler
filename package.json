@@ -60,7 +60,7 @@
     "homebridge-util-accessory-manager": "0.0.8"
   },
   "devDependencies": {
-    "@types/node": "18.15.7",
+    "@types/node": "18.15.9",
     "@typescript-eslint/eslint-plugin": "5.56.0",
     "@typescript-eslint/parser": "5.56.0",
     "eslint": "8.36.0",
