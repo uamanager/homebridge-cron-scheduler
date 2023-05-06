@@ -66,7 +66,7 @@ export class TaskHandler {
       this._handleCronJob.bind(this),
     );
 
-    const _nextDate = this._taskCronJob.next();
+    const _nextDate = this._taskCronJob.nextRun();
 
     if (_nextDate) {
       this.$_logger && this.$_logger.debug(
@@ -120,7 +120,7 @@ export class TaskHandler {
         },
       );
 
-      const _nextDate = this._taskResetJob.next();
+      const _nextDate = this._taskResetJob.nextRun();
 
       if (_nextDate) {
         this.$_logger && this.$_logger.debug(
@@ -154,14 +154,14 @@ export class TaskHandler {
 
   private _handleActiveStateChange(activeState: boolean) {
     if (activeState) {
-      if (this._taskCronJob && !this._taskCronJob.running()) {
+      if (this._taskCronJob && !this._taskCronJob.isRunning()) {
         this.$_logger && this.$_logger.debug(
           'Start cron job:',
           this.taskConfig.taskName,
         );
         this._taskCronJob.resume();
 
-        const _nextDate = this._taskCronJob.next();
+        const _nextDate = this._taskCronJob.nextRun();
 
         if (_nextDate) {
           this.$_logger && this.$_logger.debug(
