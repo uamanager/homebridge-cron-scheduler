@@ -91,7 +91,7 @@ export class TaskHandler {
       _taskAccessory?.setSensorState(true);
       setTimeout(() => {
         _taskAccessory?.setSensorState(false);
-      }, 1000);
+      }, 10000);
 
       if (this._taskResetJob) {
         this.$_logger && this.$_logger.debug(
@@ -139,8 +139,8 @@ export class TaskHandler {
         _taskAccessory?.setSensorState(false);
         setTimeout(() => {
           _taskAccessory?.setSensorState(true);
-        }, 1000);
-      }, 1000);
+        }, 10000);
+      }, 10000);
     } else {
       this.$_logger && this.$_logger.debug(
         'Toggle task accessory state instead of reset:',
@@ -148,7 +148,7 @@ export class TaskHandler {
       );
       setTimeout(() => {
         _taskAccessory?.setSensorState(!_taskAccessory?.getRawSensorState());
-      }, 1000);
+      }, 10000);
     }
   }
 
