@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/uamanager/homebridge-cron-scheduler/compare/v1.3.0...v1.3.1) (2023-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency croner to v7 ([db75f0d](https://github.com/uamanager/homebridge-cron-scheduler/commit/db75f0dde86a8890c49e147354d8c25b74a97abb))
+* **deps:** update dependency homebridge-util-accessory-manager to v0.0.11 ([a68889d](https://github.com/uamanager/homebridge-cron-scheduler/commit/a68889d2c0d28be639a560cf9dfc1bce0352982e))
+
 ### [1.2.3](https://github.com/uamanager/homebridge-cron-scheduler/compare/v1.2.2...v1.2.3) (2023-02-26)
 
 
