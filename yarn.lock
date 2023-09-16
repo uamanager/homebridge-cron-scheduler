@@ -1473,10 +1473,10 @@ hexy@^0.2.10:
   resolved "https://registry.yarnpkg.com/hexy/-/hexy-0.2.11.tgz#9939c25cb6f86a91302f22b8a8a72573518e25b4"
   integrity sha512-ciq6hFsSG/Bpt2DmrZJtv+56zpPdnq+NQ4ijEFrveKN0ZG1mhl/LdT1NQZ9se6ty1fACcI4d4vYqC9v8EYpH2A==
 
-homebridge-util-accessory-manager@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/homebridge-util-accessory-manager/-/homebridge-util-accessory-manager-0.0.9.tgz#1303c35b2d36a04c77cb5aef274b3c76b5dad742"
-  integrity sha512-JCT2lMfvVq7ln3sL8l8xNF68uJt/VbKCPPOJBxt0LbnAjp7bvuZu1SepWgCJFkXaF63AvPoQpgBQ1/VqJS4fhg==
+homebridge-util-accessory-manager@0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/homebridge-util-accessory-manager/-/homebridge-util-accessory-manager-0.0.11.tgz#5671900616e74d050bee5a779ae7a96cd2b306e3"
+  integrity sha512-cVHdFLxLfqaQOBFzYW3gjGlmOeHmnY2sQMUZAdr+j3lBKY17aIEfKKsuXrkTr6Qbxq88bKz1Il7VYcEAxdDwzg==
 
 homebridge@1.6.1:
   version "1.6.1"
@@ -2640,6 +2640,7 @@ stream-combiner@^0.2.2:
     through "~2.3.4"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -2943,6 +2944,7 @@ wordwrap@^1.0.0:
   integrity sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
