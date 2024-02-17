@@ -761,10 +761,10 @@ create-require@^1.1.0:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
-croner@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/croner/-/croner-7.0.1.tgz#26636f11a40c7f1e92ee2e682730e42d5993e6c2"
-  integrity sha512-G2w4l4ZRwvfUBSUaBXqOS0xtsHpIGsROuOYqLxkV9VWfU7O6ZRuEncvxx08a8vAbKVc3WFD3/rxIFBGfg6Sbww==
+croner@7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/croner/-/croner-7.0.7.tgz#58fc83ab348c21e52f62051361761ec758b8494b"
+  integrity sha512-05wALDHKjt9zG1JbpziNnWPCwwv9fUKbNf6q0dWaDMJ/eDxW0394Q2R1VAzKvDgoEZBT9FhWSHHFIcgwLgXjcQ==
 
 cross-spawn@^7.0.2:
   version "7.0.3"
