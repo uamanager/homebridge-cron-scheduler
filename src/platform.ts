@@ -35,9 +35,9 @@ export class Platform implements DynamicPlatformPlugin {
     this.$_api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
   }
 
-  configureAccessory(accessory: PlatformAccessory<IAccessoryContext>) {
+  configureAccessory(accessory: PlatformAccessory) {
     this.$_logger.debug('Loading accessory from cache:', accessory.displayName);
-    this.$_accessoryManager.cache(accessory.UUID, accessory);
+    this.$_accessoryManager.cache(accessory.UUID, accessory as PlatformAccessory<IAccessoryContext>);
   }
 
   didFinishLaunching() {

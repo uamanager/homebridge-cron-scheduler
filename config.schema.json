@@ -2,6 +2,7 @@
   "pluginAlias": "CronScheduler",
   "pluginType": "platform",
   "singular": true,
+  "strictValidation": false,
   "headerDisplay": "Cron Scheduler plugin for Homebridge, which allows scheduling of triggers using cron expressions.",
   "footerDisplay": "Visit the Project [Readme](https://github.com/uamanager/homebridge-cron-scheduler#readme) for more details.",
   "schema": {

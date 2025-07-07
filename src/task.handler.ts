@@ -17,7 +17,7 @@ export class TaskHandler {
     readonly $_accessoryManager: AccessoriesManager<TPlatformAccessories, IAccessoryContext>,
     private readonly $_logger?: Logger,
   ) {
-    this.$_logger && this.$_logger.debug(
+    this.$_logger?.debug(
       'Finished initializing task handler:',
       this.taskConfig.taskName,
     );
@@ -69,7 +69,7 @@ export class TaskHandler {
     const _nextDate = this._taskCronJob.nextRun();
 
     if (_nextDate) {
-      this.$_logger && this.$_logger.debug(
+      this.$_logger?.debug(
         'Next cron job execution date:',
         this.taskConfig.taskName,
         _nextDate,
@@ -78,7 +78,7 @@ export class TaskHandler {
   }
 
   private _handleCronJob() {
-    this.$_logger && this.$_logger.debug(
+    this.$_logger?.debug(
       'Executed cron job:',
       this.taskConfig.taskName,
     );
@@ -94,7 +94,7 @@ export class TaskHandler {
       }, 10000);
 
       if (this._taskResetJob) {
-        this.$_logger && this.$_logger.debug(
+        this.$_logger?.debug(
           'Rewrite previous task accessory reset handler:',
           this.taskConfig.taskName,
         );
@@ -112,7 +112,7 @@ export class TaskHandler {
           timezone: this.taskConfig.timezone,
         },
         () => {
-          this.$_logger && this.$_logger.debug(
+          this.$_logger?.debug(
             'Executed task accessory state reset:',
             this.taskConfig.taskName,
           );
@@ -123,7 +123,7 @@ export class TaskHandler {
       const _nextDate = this._taskResetJob.nextRun();
 
       if (_nextDate) {
-        this.$_logger && this.$_logger.debug(
+        this.$_logger?.debug(
           'Task accessory reset date:',
           this.taskConfig.taskName,
           _nextDate,
@@ -132,7 +132,7 @@ export class TaskHandler {
     } else if (this.taskConfig.taskStateResetInterval === 0) {
       _taskAccessory?.setSensorState(true);
       setTimeout(() => {
-        this.$_logger && this.$_logger.debug(
+        this.$_logger?.debug(
           'Immediate task accessory state reset:',
           this.taskConfig.taskName,
         );
@@ -142,7 +142,7 @@ export class TaskHandler {
         }, 10000);
       }, 10000);
     } else {
-      this.$_logger && this.$_logger.debug(
+      this.$_logger?.debug(
         'Toggle task accessory state instead of reset:',
         this.taskConfig.taskName,
       );
@@ -155,7 +155,7 @@ export class TaskHandler {
   private _handleActiveStateChange(activeState: boolean) {
     if (activeState) {
       if (this._taskCronJob && !this._taskCronJob.isRunning()) {
-        this.$_logger && this.$_logger.debug(
+        this.$_logger?.debug(
           'Start cron job:',
           this.taskConfig.taskName,
         );
@@ -164,7 +164,7 @@ export class TaskHandler {
         const _nextDate = this._taskCronJob.nextRun();
 
         if (_nextDate) {
-          this.$_logger && this.$_logger.debug(
+          this.$_logger?.debug(
             'Next cron job execution date:',
             this.taskConfig.taskName,
             _nextDate,
@@ -172,7 +172,7 @@ export class TaskHandler {
         }
       }
     } else {
-      this.$_logger && this.$_logger.debug(
+      this.$_logger?.debug(
         'Stop cron job:',
         this.taskConfig.taskName,
       );

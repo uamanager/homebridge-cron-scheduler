@@ -59,7 +59,7 @@ export class TaskAccessory extends BaseAccessory<IAccessoryContext> {
       ? this.$_api.hap.Characteristic.ContactSensorState.CONTACT_DETECTED
       : this.$_api.hap.Characteristic.ContactSensorState.CONTACT_NOT_DETECTED;
 
-    this.$_logger && this.$_logger.debug(
+    this.$_logger?.debug(
       `[${this._accessory.context.name}] Get SensorState On ->`,
       this._contactSensorState ? 'CONTACT_DETECTED' : 'CONTACT_NOT_DETECTED',
     );
@@ -75,7 +75,7 @@ export class TaskAccessory extends BaseAccessory<IAccessoryContext> {
     if (state !== this._contactSensorState) {
       this._contactSensorState = state;
 
-      this.$_logger && this.$_logger.debug(
+      this.$_logger?.debug(
         `[${this._accessory.context.name}] Set SensorState On ->`,
         state ? 'CONTACT_DETECTED' : 'CONTACT_NOT_DETECTED',
       );
@@ -91,8 +91,8 @@ export class TaskAccessory extends BaseAccessory<IAccessoryContext> {
     return this._activeState;
   }
 
-  async setActiveState(state) {
-    this.$_logger && this.$_logger.debug(
+  async setActiveState(state: unknown) {
+    this.$_logger?.debug(
       `[${this._accessory.context.name}] Set ActiveState On ->`,
       state ? 'ON' : 'OFF',
     );
