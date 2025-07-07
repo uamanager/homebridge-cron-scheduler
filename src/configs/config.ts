@@ -1,6 +1,6 @@
 import { PlatformConfig } from 'homebridge';
 import { PLATFORM_NAME } from '../settings';
-import { TaskConfig, ITaskConfig } from './task.config';
+import { ITaskConfig, TaskConfig } from './task.config';
 
 export interface IConfig extends PlatformConfig {
   debug?: boolean;
