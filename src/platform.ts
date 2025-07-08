@@ -1,12 +1,12 @@
 import { API, DynamicPlatformPlugin, Logger, PlatformAccessory } from 'homebridge';
 
-import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
-import { Config, IConfig } from './configs/config';
+import { PLATFORM_NAME, PLUGIN_NAME } from './settings.js';
+import { Config, IConfig } from './configs/config.js';
 import { AccessoriesManager } from 'homebridge-util-accessory-manager';
-import { IAccessoryContext } from './accessories/accessory.context';
-import { CSLogger } from './logger';
-import { TaskAccessory } from './accessories/task.accessory';
-import { TaskHandler } from './task.handler';
+import { IAccessoryContext } from './accessories/accessory.context.js';
+import { CSLogger } from './logger.js';
+import { TaskAccessory } from './accessories/task.accessory.js';
+import { TaskHandler } from './task.handler.js';
 
 export type TPlatformAccessories = TaskAccessory;
 

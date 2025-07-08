@@ -1,5 +1,5 @@
 import { API, CharacteristicValue, Logger, PlatformAccessory, Service } from 'homebridge';
-import { IAccessoryContext } from './accessory.context';
+import { IAccessoryContext } from './accessory.context.js';
 import { BaseAccessory } from 'homebridge-util-accessory-manager';
 
 

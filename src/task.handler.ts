@@ -1,8 +1,8 @@
-import { TaskAccessory } from './accessories/task.accessory';
-import { TPlatformAccessories } from './platform';
-import { PLATFORM_MANUFACTURER, PLATFORM_VERSION } from './settings';
-import { IAccessoryContext } from './accessories/accessory.context';
-import { TaskConfig } from './configs/task.config';
+import { TaskAccessory } from './accessories/task.accessory.js';
+import { TPlatformAccessories } from './platform.js';
+import { PLATFORM_MANUFACTURER, PLATFORM_VERSION } from './settings.js';
+import { IAccessoryContext } from './accessories/accessory.context.js';
+import { TaskConfig } from './configs/task.config.js';
 import { API, Logger } from 'homebridge';
 import { AccessoriesManager, IBaseAccessoryCtor } from 'homebridge-util-accessory-manager';
 import { Cron } from 'croner';
