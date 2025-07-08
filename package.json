@@ -43,7 +43,7 @@
     "build": "tsc",
     "prepublishOnly": "yarn lint && yarn build",
     "postversion": "git push && git push --tags",
-    "release": "yarn lint && yarn build && commit-and-tag-version -a && git push --follow-tags origin master && yarn publish"
+    "release": "yarn lint && yarn build && commit-and-tag-version -a && git push --follow-tags origin master"
   },
   "keywords": [
     "homebridge",
