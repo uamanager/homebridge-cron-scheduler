@@ -680,10 +680,10 @@ commander@14.0.2:
   resolved "https://registry.yarnpkg.com/commander/-/commander-14.0.2.tgz#b71fd37fe4069e4c3c7c13925252ada4eba14e8e"
   integrity sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==
 
-commit-and-tag-version@12.7.0:
-  version "12.7.0"
-  resolved "https://registry.yarnpkg.com/commit-and-tag-version/-/commit-and-tag-version-12.7.0.tgz#d893145125e6b6760a82723efc7458ce98cfe953"
-  integrity sha512-uICrirNtf1FvNydqHLrTPsX7zp74pStCJUuenrxlQSwjrriAYeIPIuIl8z7no3fiQEtvQxjJ/A48rMLY5gqOxQ==
+commit-and-tag-version@12.7.1:
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/commit-and-tag-version/-/commit-and-tag-version-12.7.1.tgz#8614bb814f55a64e315290aa00903d864145d62f"
+  integrity sha512-18+iV9VMPWQ5rryn1nKprvkwqFMx1eOcEwIprjgyGm8Blhsw7WnsFXgyYLIlBF4uG2fcbbps8P7fBZARvaA0VA==
   dependencies:
     chalk "^2.4.2"
     conventional-changelog "4.0.0"
@@ -693,7 +693,7 @@ commit-and-tag-version@12.7.0:
     detect-indent "^6.1.0"
     detect-newline "^3.1.0"
     dotgitignore "^2.1.0"
-    fast-xml-parser "^5.3.4"
+    fast-xml-parser "^5.5.6"
     figures "^3.2.0"
     find-up "^5.0.0"
     git-semver-tags "^5.0.1"
@@ -1203,7 +1203,7 @@ fast-xml-builder@^1.1.4:
   dependencies:
     path-expression-matcher "^1.1.3"
 
-fast-xml-parser@^5.3.4:
+fast-xml-parser@^5.5.6:
   version "5.5.6"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.5.6.tgz#6fc61f5ae06a55a1f058abd6a4f4b5d3e9972cd0"
   integrity sha512-3+fdZyBRVg29n4rXP0joHthhcHdPUHaIC16cuyyd1iLsuaO6Vea36MPrxgAzbZna8lhvZeRL8Bc9GP56/J9xEw==
