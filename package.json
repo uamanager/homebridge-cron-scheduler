@@ -74,7 +74,7 @@
     "homebridge": "^2.0.0-beta.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3",
+    "typescript": "^6.0.0",
     "typescript-eslint": "^8.24.1"
   }
 }
