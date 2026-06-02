@@ -688,10 +688,10 @@ commander@14.0.2:
   resolved "https://registry.yarnpkg.com/commander/-/commander-14.0.2.tgz#b71fd37fe4069e4c3c7c13925252ada4eba14e8e"
   integrity sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==
 
-commit-and-tag-version@12.7.1:
-  version "12.7.1"
-  resolved "https://registry.yarnpkg.com/commit-and-tag-version/-/commit-and-tag-version-12.7.1.tgz#8614bb814f55a64e315290aa00903d864145d62f"
-  integrity sha512-18+iV9VMPWQ5rryn1nKprvkwqFMx1eOcEwIprjgyGm8Blhsw7WnsFXgyYLIlBF4uG2fcbbps8P7fBZARvaA0VA==
+commit-and-tag-version@12.7.3:
+  version "12.7.3"
+  resolved "https://registry.yarnpkg.com/commit-and-tag-version/-/commit-and-tag-version-12.7.3.tgz#92095e18733b14f7547b371fde2f2499d6091317"
+  integrity sha512-rbauuCDU98yEHMy/LrNNu8HLTuGv7C2kN/3GXC59L18aJGii0eiryCESb1SEHXNFem2/2ngWG/Pq6qaCqw3aCw==
   dependencies:
     chalk "^2.4.2"
     conventional-changelog "4.0.0"
