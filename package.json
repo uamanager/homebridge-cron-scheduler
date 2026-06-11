@@ -62,7 +62,7 @@
     "automation"
   ],
   "dependencies": {
-    "croner": "^9.1.0",
+    "croner": "^10.0.0",
     "homebridge-lib": "^7.1.4",
     "homebridge-util-accessory-manager": "0.1.1"
   },
