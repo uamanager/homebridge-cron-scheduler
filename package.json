@@ -63,7 +63,7 @@
   ],
   "dependencies": {
     "croner": "^9.1.0",
-    "homebridge-lib": "^7.1.4",
+    "homebridge-lib": "^8.0.0",
     "homebridge-util-accessory-manager": "0.1.1"
   },
   "devDependencies": {
